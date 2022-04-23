@@ -1,0 +1,207 @@
+---
+title: "CSE 101 R Notebook"
+output: html_notebook
+---
+
+==============================================================================================================
+
+**Task 1:**
+
+Take 3 inputs from the user: x, y, z. Write a program in R that prints the numbers that are multiples of both x and y  from 1 to z using loops.(while or for loop)
+
+==============================================================================================================
+
+```{r}
+
+#Solution to Task 1
+
+num_x = as.integer(readline(prompt = "Sir, please enter your first number: "))
+num_y = as.integer(readline(prompt = "Sir, please enter your second number: "))
+num_z = as.integer(readline(prompt = "Sir, please enter your second number: "))
+
+for (i in 1:num_z) {if (i %% num_x == 0 & i %% num_y == 0) {cat(paste(i,""))}}
+
+```
+
+==============================================================================================================
+
+**Task 2:**
+
+Write a program in R that takes a number, n and prints a triangle with n steps like the following:
+
+Hint: Use cat function instead of print() without a new line.
+
+**Sample Input:**
+
+6
+
+**Sample Output:**
+
+**\***
+
+**\*\***
+
+**\*\*\***
+
+**\*\*\*\***
+
+**\*\*\*\*\***
+
+**\*\*\*\*\*\***
+
+==============================================================================================================
+
+```{r}
+
+#Solution to Task 2
+
+num_x = as.integer(readline(prompt = "Sir, please enter your first number: "))
+
+for (i in 1:num_x) {cat(paste(replicate(i,"*")), "\n")}
+
+```
+
+==============================================================================================================
+
+**Task 3:**
+
+Write a program in R that takes a string input from the user and prints the characters of odd numbered indices using a loop.
+
+**Sample Input:**
+
+Programming
+
+**Sample Output:**
+
+P
+
+o
+
+r
+
+m
+
+i
+
+g
+
+**Sample Input:**
+
+Computer
+
+**Sample Output:**
+
+C
+
+m
+
+u
+
+e
+
+==============================================================================================================
+
+```{r}
+
+#Solution to Task 3
+
+user_input = readline(prompt = "Sir, please enter your desired text: ")
+
+for (i in 1:nchar(user_input)) {if (i %% 2 == 0) {cat(substr(user_input, i, i),"\n")}}
+
+```
+
+==============================================================================================================
+
+**Task 4:**
+
+Write a program in R that would take an integer input from the user and display if that particular number is a prime number or not.
+
+A number is a prime number if it is divisible only by itself and 1 (example: 2, 3, 5, 7, 11).
+
+==============================================================================================================\
+
+```{r}
+
+# Solution to Task 4
+
+user_input = as.integer(readline(prompt = "Sir, please enter your desired number: "))
+flag = TRUE
+
+for (i in 2:(user_input-1)) {if (user_input %% i == 0) {flag = FALSE}}
+
+if (flag | user_input == 2 | user_input == 3) {cat(user_input,"is a prime number")
+} else {cat(user_input,"is not a prime number")}
+
+```
+
+==============================================================================================================
+
+**Task 5:**
+
+Write a R program to update the last element with "R programming"  of the following list and prints the new list:
+
+mylist= list("John","Denver","Max",1,2,4,8,9,11,list("Java"))
+
+==============================================================================================================
+
+```{r}
+
+# Solution to Task 5
+
+mylist= list("John","Denver","Max",1,2,4,8,9,11,list("Java"))
+mylist[length(mylist)]= "R programming"
+print(mylist)
+
+```
+
+==============================================================================================================
+
+**Task 6:**
+
+Write a R program to add a new item "Ford" after the third element of the given list and prints the new list of cars: 
+
+super_cars = list("Ferrari","Audi","Porsche","Lamborghini","Nissan")
+
+==============================================================================================================
+
+```{r}
+
+# Solution to Task 6
+
+super_cars = list("Ferrari","Audi","Porsche","Lamborghini","Nissan")
+
+super_cars = append(super_cars, "Ford", after = 3)
+
+print(super_cars)
+
+```
+
+\
+==============================================================================================================
+
+**Task 7:**
+
+Write a R program to create an array of two 3x3 matrices each with 3 rows and 3 columns from a given vector and print the second row of the first matrix of the array.
+
+Given vector: vc1 =  c(10,11,12,13,14,15)
+
+==============================================================================================================
+
+```{r}
+
+# Solution to Task 7
+
+vc1 = c(10,11,12,13,14,15)
+
+result_array = array(c(vc1,vc1), dim = c(3,3,2))
+
+print(result_array[2, ,1])
+
+```
+
+======================================================**END**=====================================================\
+
+
+
+\
